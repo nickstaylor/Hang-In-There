@@ -1,4 +1,25 @@
 // query selector variables go here 👇
+let showRandomButton = document.querySelector(".show-random")
+//event listeners
+showRandomButton.addEventListener('click', displayRandomImage)
+
+window.onload  = displayRandomImage
+
+function displayRandomImage(){
+  
+  //grab the items that need to change
+  let image = document.querySelector('.poster-img')
+  let title = document.querySelector('.poster-title')
+  let quote = document.querySelector('.poster-quote')
+  let newImage = getRandomIndex(images)
+  let newTitle = getRandomIndex(titles)
+  let newQuote = getRandomIndex(quotes)
+  image.src = images[newImage]
+  title.innerHTML = titles[newTitle]
+  quote.innerHTML = quotes[newQuote]
+  //let poster = document.querySelector('.poster')
+  //console.log(poster.children)
+}
 
 // we've provided you with some data to work with 👇
 var images = [
