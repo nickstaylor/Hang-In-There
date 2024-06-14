@@ -1,7 +1,18 @@
 // query selector variables go here 👇
 let showRandomButton = document.querySelector(".show-random")
+let makeOwnPosterButton = document.querySelector(".show-form")
+let showSavedButton = document.querySelector(".show-saved")
+let mainPosterView = document.querySelector('.main-poster')
+let posterFormView = document.querySelector('.poster-form')
+let savedPosterView = document.querySelector('.saved-posters')
+let showMainButton = document.querySelector(".show-main")
+let backToMainButton = document.querySelector(".back-to-main")
 //event listeners
 showRandomButton.addEventListener('click', displayRandomImage)
+makeOwnPosterButton.addEventListener('click', showPosterForm)
+showSavedButton.addEventListener('click', showSavedPosters)
+showMainButton.addEventListener('click', showMainPage)
+backToMainButton.addEventListener('click', showMainPage)
 
 window.onload  = displayRandomImage
 
@@ -20,6 +31,29 @@ function displayRandomImage(){
   //let poster = document.querySelector('.poster')
   //console.log(poster.children)
 }
+
+//const showPosterForm = () => {
+  //cannot used 'const' unless the event listener is below the function
+  // as the function becomes a variable and it cannot be initialized, or called, before it's defined
+function showPosterForm(){
+  mainPosterView.classList.add("hidden")
+  posterFormView.classList.remove("hidden")
+}
+
+function showSavedPosters(){
+  mainPosterView.classList.add("hidden")
+  savedPosterView.classList.remove("hidden")
+}
+
+function showMainPage(){
+  posterFormView.classList.add("hidden")
+  savedPosterView.classList.add("hidden")
+  mainPosterView.classList.remove("hidden")
+}
+
+
+
+
 
 // we've provided you with some data to work with 👇
 var images = [
